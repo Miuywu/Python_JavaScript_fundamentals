@@ -107,15 +107,19 @@ class Rectangle(Base):
         """[Rectangle] (<id>) <x>/<y> - <width>/<height>"""
         return "[Rectangle] " + "({}) {}/{} - {}/{}".format(self.id, self.__x, self.__y, self.__width, self.__height)
 
-    def update(self, *args):
-        for a in range(len(args)):
-            if a == 0:
-                self.id = args[0]
-            elif a == 1:
-                self.__width = args[1]
-            elif a == 2:
-                self.__height = args[2]
-            elif a == 3:
-                self.__x = args[3]
-            elif a == 4:
-                self.__y = args[4]
+    def update(self, *args, **kwargs):
+        if kwargs is not None:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
+        if args is not None:
+            for a in range(len(args)):
+                if a == 0:
+                    self.id = args[0]
+                elif a == 1:
+                    self.width = args[1]
+                elif a == 2:
+                    self.height = args[2]
+                elif a == 3:
+                    self.x = args[3]
+                elif a == 4:
+                    self.y = args[4]
