@@ -123,3 +123,14 @@ class Rectangle(Base):
                     self.x = args[3]
                 elif a == 4:
                     self.y = args[4]
+
+    def to_dictionary(self):
+        """Dict of Rectangle"""
+
+        dic = {}
+        for key, val in vars(self).items():
+            if len(key) > 11:
+                dic[key[12:]] = val
+            else:
+                dic[key] = val
+        return dic
