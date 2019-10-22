@@ -1,8 +1,10 @@
 #!/usr/bin/python3
-"""Class Rectangle"""
+
+"""
+Class Rectangle
+"""
+
 from models.base import Base
-import json
-from os import path
 
 
 class Rectangle(Base):
@@ -37,7 +39,7 @@ class Rectangle(Base):
 
     @property
     def width(self):
-        """size"""
+        """width"""
 
         return self.__width
 
@@ -118,6 +120,7 @@ class Rectangle(Base):
 
     def __str__(self):
         """[Rectangle] (<id>) <x>/<y> - <width>/<height>"""
+
         return "[Rectangle] " + "({}) {}/{} - {}/{}".format(
 self.id, self.__x, self.__y, self.__width, self.__height)
 
