@@ -1,5 +1,9 @@
 #!/usr/bin/python3
-"""Class Square"""
+
+"""
+Class Square
+"""
+
 from models.rectangle import Rectangle
 
 
@@ -15,11 +19,13 @@ class Square(Rectangle):
     def __str__(self):
         """[Square] (<id>) <x>/<y> - <size>"""
 
-        return "[Square] ({}) {}/{} - {}".format(self.id, self.x, self.y, self.width)
+        return "[Square] ({}) {}/{} - {}".format(self.id, self.x,
+                                                 self.y,
+                                                 self.width)
 
     @property
     def size(self):
-        """size"""
+        """get size"""
 
         return self.width
 
@@ -31,6 +37,8 @@ class Square(Rectangle):
         self.height = value
 
     def update(self, *args, **kwargs):
+        """update args kwargs"""
+
         if kwargs is not None:
             for key, value in kwargs.items():
                 setattr(self, key, value)
