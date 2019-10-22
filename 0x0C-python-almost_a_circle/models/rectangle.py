@@ -39,7 +39,7 @@ class Rectangle(Base):
 
     @property
     def width(self):
-        """width"""
+        """get width"""
 
         return self.__width
 
@@ -55,7 +55,7 @@ class Rectangle(Base):
 
     @property
     def height(self):
-        """height"""
+        """get height"""
 
         return self.__height
 
@@ -71,7 +71,7 @@ class Rectangle(Base):
 
     @property
     def x(self):
-        """x"""
+        """get x"""
 
         return self.__x
 
@@ -87,7 +87,7 @@ class Rectangle(Base):
 
     @property
     def y(self):
-        """y"""
+        """get y"""
 
         return self.__y
 
@@ -102,12 +102,12 @@ class Rectangle(Base):
         self.__y = value
 
     def area(self):
-        """area"""
+        """get area"""
 
         return self.__width * self.__height
 
     def display(self):
-        """print []"""
+        """displays rectangle"""
 
         for c in range(self.__y):
             print()
