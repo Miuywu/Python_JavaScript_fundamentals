@@ -71,6 +71,6 @@ class Base:
         filename = cls.__name__ + '.json'
         if path.isfile(filename):
             with open(filename, 'r') as f:
-                dictionary = json.load(f)
+                dictionary = cls.from_json_string(f.read())
             return [cls.create(**obj) for obj in dictionary]
         return []
