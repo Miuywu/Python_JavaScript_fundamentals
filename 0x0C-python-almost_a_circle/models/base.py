@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+import json
+
 class Base:
     """Base class for project"""
 
@@ -12,3 +14,4 @@ class Base:
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
+

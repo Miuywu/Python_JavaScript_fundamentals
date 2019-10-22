@@ -8,7 +8,7 @@ class Rectangle(Base):
     def __init__(self, width, height, x=0, y=0, id=None):
         """constructs a Rectangle"""
 
-        super().__init__(id)
+#        super().__init__(id)
 
         if type(width) != int:
             raise TypeError('width must be an integer')
@@ -31,6 +31,7 @@ class Rectangle(Base):
         self.__height = height
         self.__x = x
         self.__y = y
+        super().__init__(id)
 
     @property
     def width(self):
