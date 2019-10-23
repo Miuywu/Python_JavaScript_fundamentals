@@ -1,18 +1,21 @@
 #!/usr/bin/python3
-"""Unittest for Square Size
+
 """
+Unittesting for class square
+"""
+
 import unittest
+import sys
 from models.base import Base
 from models.rectangle import Rectangle
 from models.square import Square
+from io import StringIO
 
--ed:
-class TestSquareSize(unittest.TestCase):
-    """Test Square Size Method"""
-    def test_size(self):
-        s1 = Square(5)
-          self.assertEqual(str(s1), "[Square] (1) 0/0 - 5")
 
+class TestSquareClass(unittest.TestCase):
+    """
+    class testing for valid/invalid outputs
+    """
     def test1_inputs(self):
         """square valid input"""
         s1 = Square(5)
@@ -31,23 +34,39 @@ class TestSquareSize(unittest.TestCase):
         self.assertRaises(TypeError, Square, [69, 619])
 
     def test5_inputs(self):
+        """check string output"""
         s2 = Square(6)
+        self.assertEqual(str(s2), "[Square] (3) 0/0 - 6")
 
     def test6_updates(self):
+        """check if updates args"""
         s3 = Square(3)
         s3.update(69)
         self.assertEqual(s3.id, 69)
 
     def test7_updates(self):
         """check if updates kwargs"""
+        s4 = Square(size=5)
+        s4.update(size=551)
+        self.assertEqual(s4.size, 551)
 
     def test8_updates(self):
+        """check multiple args"""
         s5 = Square(1, 2, 3, 4)
+        s5.update(5, 6, 7, 8)
+        self.assertEqual(str(s5), "[Square] (5) 7/8 - 6")
 
-    def test_to_dictionary(self):
-        """Test conversion to dictionary"""
-        r = Square(1, 1, 1, 1)
-        d = {'id': 1, 'size': 1, 'x': 1, 'y': 1}
-        self.assertEqual(r.to_dictionary(), d)
-        r.my_fun_new_attr = 42
-        self.assertEqual(r.to_dictionary(), d)
+    def test9_updates(self):
+        """check multiple kwargs"""
+        s6 = Square(2)
+        s6.update(id=5, size=2, x=4, y=6)
+        self.assertEqual(str(s6), "[Square] (5) 4/6 - 2")
+
+    def test10_updates(self):
+        """check 2 kwargs update"""
+        s7 = Square(3)
+        s7.update(size=69, id=4)
+        self.assertEqual(str(s7), "[Square] (4) 0/0 - 69")
+
+if __name__ == '__main__':
+    unittest.main()
