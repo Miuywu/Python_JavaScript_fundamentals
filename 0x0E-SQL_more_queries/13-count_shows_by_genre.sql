@@ -2,7 +2,7 @@
 -- and displays the number of shows linked to each.
 SELECT
     tv_genres AS genre,
-    count(tv_genres) AS number_of_shows
+    count(tv_show_genres.genre_id) AS number_of_shows
 FROM
     tv_show_genres
 LEFT JOIN
