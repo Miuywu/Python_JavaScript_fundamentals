@@ -15,4 +15,5 @@ ON
 WHERE
     title = 'Dexter'
 ORDER BY
-    tv_genres.name;
+    tv_genres.name
+ASC;
