@@ -10,7 +10,7 @@ LEFT JOIN
 ON
     tv_show_genres.genre_id = tv_genres.id
 GROUP BY
-    tv_genres.name
+    genre
 ORDER BY
     number_of_shows
 DESC;
