@@ -20,7 +20,7 @@ if __name__ == "__main__":
     session = Session()
     tus = session.query(State).first()
     if tus is not None:
-        print("{}: {}".format(status.id, status.name))
+        print("{}: {}".format(tus.id, status.name))
     else:
         print("Nothing")
     session.close()
