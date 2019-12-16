@@ -21,8 +21,8 @@ if __name__ == "__main__":
     session = Session()
     a = 0
     for state in session.query(State).order_by(State.id).all():
-        if argv[4] == state.name:
-            print(state.id)
+        if state.name == sys.argv[4]:
+            print("{}".format(state.id))
             a = 1
     if a == 0:
         print("Not found")
