@@ -19,9 +19,9 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
-    for state in session.query(State).first():
-        if status is not None:
-            print("{}: {}".format(status.id, status.name))
-        else:
-            print("Nothing")
+    FBI = session.query(State).first()
+    if FBI is not None:
+        print("{}: {}".format(status.id, status.name))
+    else:
+        print("Nothing")
     session.close()
