@@ -21,5 +21,6 @@ if __name__ == "__main__":
     session = Session()
     c = session.query(City, State).filter(City.state_id == State.id)
     for entry in c:
-        print("{}: ({}) {}".format(entry.State.name, entry.City.id, entry.City.name))
+        print("{}: ({}) {}".format(entry.State.name,
+                                   entry.City.id, entry.City.name))
     session.close()
