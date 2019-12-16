@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ Script that lists all states from the database hbtn_0e_0_usa """
 
+
 import MySQLdb
 import sys
 from model_state import Base, State
@@ -9,8 +10,7 @@ from sqlalchemy.orm import sessionmaker
 
 
 if __name__ == "__main__":
-    """ if comment """
-
+""" if comment """
     engine = create_engine("mysql+mysqldb://" +
                            "{}:{}@localhost/{}".format(sys.argv[1],
                                                        sys.argv[2],
@@ -19,8 +19,8 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
-    FBI = session.query(State).first()
-    if FBI is not None:
+    tus = session.query(State).first()
+    if tus is not None:
         print("{}: {}".format(status.id, status.name))
     else:
         print("Nothing")
