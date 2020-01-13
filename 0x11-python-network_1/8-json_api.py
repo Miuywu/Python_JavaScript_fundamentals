@@ -4,8 +4,8 @@ import requests
 import sys
 
 if __name__ == '__main__':
-    variable = {'q': '')
-    if sys.argv[1]:
+    variable = {'q': ''}
+    if len(sys.argv) > 1:
         variable = {'q': sys.argv[1]}
 
     req = requests.post('http://0.0.0.0:5000/search_user', data=variable)
