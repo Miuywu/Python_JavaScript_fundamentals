@@ -10,10 +10,10 @@ if __name__ == '__main__':
 
     req = requests.post('http://0.0.0.0:5000/search_user', data=variable)
     try:
-        derulo = resp.json()
+        derulo = req.json()
         if derulo:
             print('[{}] {}'.format(derulo.get('id'), derulo.get('name')))
         else:
-            print("No result")
-    except ValueError:
-        print("Not a valid JSON")
+            print('No result')
+    except:
+        print('Not a valid JSON')
