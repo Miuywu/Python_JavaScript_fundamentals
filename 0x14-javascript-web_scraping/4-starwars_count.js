@@ -5,16 +5,14 @@ request.get(process.argv[2], (error, response, body) => {
   if (error) {
     throw error;
   }
-});
-request.get('https://swapi.co/api/people/18/', (error, response, body) => {
-  if (error) {
-    throw error;
-  }
+  const derulo = JSON.parse(body);
   let c = 0;
-  for (const film of JSON.parse(body).films) {
-    if (typeof film === 'string') {
-      c++;
+  for (const film of derulo.results) {
+    for (const character of film.characters) {
+      if (character === 'https://swapi.co/api/people/18/') {
+        c++;
+      }
     }
   }
-  return console.log(c);
+  console.log(c);
 });
