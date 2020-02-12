@@ -9,7 +9,7 @@ request(process.argv[2], function (error, response, body) {
   let c = 0;
   for (const film of derulo.results) {
     for (const character of film.characters) {
-      if (character === 'https://swapi.co/api/people/18/') {
+      if (character.includes('18')) {
         c++;
       }
     }
