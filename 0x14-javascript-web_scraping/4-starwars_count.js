@@ -1,7 +1,7 @@
 #!/usr/bin/node
 const request = require('request');
 
-request.get(process.argv[2], (error, response, body) => {
+request(process.argv[2], function (error, response, body) {
   if (error) {
     throw error;
   }
